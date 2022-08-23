@@ -1,0 +1,76 @@
+<div *ngIf="dataPersonsList" class="container">
+    <table *ngIf="curUser != 'user'">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th class="actions">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of dataPersonsList">
+                <td *ngIf="person.type == filter">
+                    {{person.idPerson}}
+                </td>
+                <td *ngIf="person.type == filter">
+                    {{person.name}}
+                </td>
+                <td *ngIf="person.type == filter">
+                    {{person.lastName}}
+                </td>
+                <td *ngIf="person.type == filter">
+                    {{person.email}}
+                </td>
+                <td class="actions" *ngIf="person.type == filter"> 
+                    <button mat-flat-button color="primary"
+                        (click)="openCourses(person.idPerson)"
+                    >
+                        VER
+                    </button>    
+                    <button mat-flat-button color="accent"
+                        (click)="editStudent(person)"
+                    >
+                        Editar
+                    </button>  
+                    <button mat-button color="warn"
+                        (click)="deleteStudent(person)"
+                    >
+                        Eliminar
+                    </button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table *ngIf="curUser == 'user'">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of dataPersonsList;">
+                <td *ngIf="person.type == filter">
+                    {{person.name}}
+                </td>
+                <td *ngIf="person.type == filter">
+                    {{person.lastName}}
+                </td>
+                <td *ngIf="person.type == filter">
+                    {{person.email}}
+                </td>
+                <td>
+                    <button mat-flat-button color="primary"
+                        (click)="openCourses(person.idPerson)"
+                    >
+                        VER
+                    </button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

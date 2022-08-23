@@ -1,0 +1,19 @@
+<mat-form-field appearance="fill">
+    <mat-label>Añadir a curso</mat-label>
+    <mat-select 
+        [(ngModel)]="selectedCourse"
+        (ngModelChange)="onCourseChange()">
+        <mat-option *ngFor="let course of availableCourses" [value]="course">
+            {{course.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<small *ngIf="existCourse">El curso ya se encuentra asignado al alumno</small>
+<div>
+    <h2>Cursos actuales:</h2>
+    <div *ngFor="let course of currentStudentCourses">
+        <label>
+            {{course.name}}
+        </label>
+    </div>
+</div>

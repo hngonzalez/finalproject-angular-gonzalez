@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="courseForm">
+        <mat-form-field>
+            <input matInput
+            type="text" placeholder="Nombre" formControlName="name">
+            <mat-error *ngIf="courseForm.get('name')?.errors?.['required'] && courseForm.get('name')?.touched">Campo requerido</mat-error>
+        </mat-form-field>
+    </form>
+    <div class="actions">
+        <button mat-flat-button color="primary"
+            (click)="onSave()"
+            [disabled]="courseForm.invalid">
+            Guardar
+        </button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<mat-card>
+    <div class="actions-new-edit">
+        <button mat-stroked-button color="primary"
+        (click)="selectionCourse('New')">
+            Nuevo
+        </button>
+        <button mat-stroked-button color="primary"
+        (click)="selectionCourse('Edit')">
+            Editar
+        </button>
+    </div>
+    <div *ngIf="newCourse == 'New'">
+        <form [formGroup]="classroomForm">
+            <mat-form-field>
+                <input matInput
+                type="text" placeholder="Nombre del aula" formControlName="name" >
+                <mat-error *ngIf="classroomForm.get('name')?.errors?.['required'] && classroomForm.get('name')?.touched">Campo requerido</mat-error>
+            </mat-form-field>
+        </form>
+        <div class="actions">
+            <button mat-flat-button color="primary"
+                (click)="onSave('New')"
+                [disabled]="classroomForm.invalid">
+                Guardar
+            </button>
+        </div>
+        <h2 [hidden]="saved">Guardado</h2>
+    </div>
+    <div *ngIf="newCourse == 'Edit'">
+        <mat-select (selectionChange)="onChange()" [(ngModel)]="classroom">
+            <mat-option *ngFor="let course of availableClassroom" [value]="course">
+                {{course.name}}
+            </mat-option>
+        </mat-select>
+        <form [formGroup]="classroomForm">
+            <mat-form-field>
+                <input matInput
+                type="text" placeholder="Nombre del aula" formControlName="name" >
+                <mat-error *ngIf="classroomForm.get('name')?.errors?.['required'] && classroomForm.get('name')?.touched">Campo requerido</mat-error>
+            </mat-form-field>
+        </form>
+        <div class="actions">
+            <button mat-flat-button color="primary"
+                (click)="onSave('Edit')"
+                [disabled]="classroomForm.invalid">
+                Guardar
+            </button>
+        </div>
+        <h2 [hidden]="saved">Guardado</h2>
+    </div>
+</mat-card>

@@ -1,0 +1,7 @@
+<div>
+    <div class="content" [ngSwitch]="curView">
+        <app-new-student *ngSwitchCase="'Student'"></app-new-student>
+        <app-new-course *ngSwitchCase="'Course'"></app-new-course>
+        <app-new-classroom *ngSwitchCase="'Classroom'"></app-new-classroom>
+    </div>
+</div>

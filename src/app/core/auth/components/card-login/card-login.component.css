@@ -1,0 +1,31 @@
+.example-card {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-login {
+    width: 100%;
+    letter-spacing: 4px;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;    
+    padding-top: 20px;
+}
+
+mat-form-field {
+    padding: 10px;
+}
+
+mat-card-actions {
+    padding: 10px;
+}
+
+.error {
+    text-align: center;
+    padding: 10px;
+    color: red;
+}

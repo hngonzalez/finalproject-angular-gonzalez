@@ -1,0 +1,52 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-toolbar {
+    background-color: #151515;
+    color: #FFFFFF;
+}
+
+.content {
+    height: 100%;
+}
+
+.example-container {
+    height: 100%;
+}
+
+mat-drawer {
+    display: flex;
+    justify-content: start;
+    border: 0;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+
+}
+
+ul li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
+}
+
+ul li:hover {
+    background-color: #673ab7;
+    color: white;
+}
+
+li label {
+    margin-left: 10px;
+}

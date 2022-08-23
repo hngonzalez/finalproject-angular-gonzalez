@@ -1,0 +1,19 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    width: 90%;
+    text-align: center;
+}
+
+.actions {
+    width: 40%;
+}
+
+button {
+    margin: 0 10px;
+}

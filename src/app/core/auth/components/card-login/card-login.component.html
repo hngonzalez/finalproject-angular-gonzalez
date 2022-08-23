@@ -1,0 +1,32 @@
+<mat-card class="example-card">
+    <mat-card-subtitle>Bienvenido!</mat-card-subtitle>
+    <mat-card-title>Acceso de Usuarios</mat-card-title>
+    <mat-card-content>
+        <mat-form-field appearance="legacy">
+            <mat-label>Usuario</mat-label>
+            <input matInput 
+                [(ngModel)]="username">
+            <mat-icon matSuffix >account_circle_sharp </mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>Contraseña</mat-label>
+            <input type='password' matInput 
+                [(ngModel)]="password">
+            <mat-icon matSuffix >lock</mat-icon>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <button class="btn-login" 
+            mat-flat-button 
+            color="primary"
+        (click)="onLogin()"
+        >
+            LOGIN
+        </button>
+    </mat-card-actions>
+    <mat-label class="error" *ngIf="!exists">Revise los datos ingresados</mat-label>
+    <mat-card-footer>
+        <mat-progress-bar mode="indeterminate" *ngIf="loading$ | async"></mat-progress-bar>
+    </mat-card-footer>
+</mat-card>

@@ -1,0 +1,33 @@
+<div class="container">
+    <mat-toolbar class="menu">
+        <span>ABM Estudiantes</span>
+        <button mat-flat-button color="warn"
+            (click)="onLogout()"
+        >
+            Logout
+        </button>
+    </mat-toolbar>
+    <div class="content">
+        <mat-drawer-container class="example-container">
+            <mat-drawer mode="side" opened>     
+                <ul>
+                    <li [routerLink]="['./students']">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">group</mat-icon>
+                        <label>Alumnos</label>
+                    </li>
+                    <li [routerLink]="['./courses']">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">square_foot</mat-icon>
+                        <label>Cursos</label>
+                    </li>
+                    <li [routerLink]="['./inscriptions']">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">person_add</mat-icon>
+                        <label>Inscripciones</label>
+                    </li>
+                </ul>
+            </mat-drawer>
+            <mat-drawer-content>
+                <router-outlet></router-outlet>
+            </mat-drawer-content>
+        </mat-drawer-container>    
+    </div>
+</div>

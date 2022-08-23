@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+}
+
+.actions button {
+    margin: 10px;
+}
+
+.actions-new-edit {
+    display: flex;
+    flex-direction: row;
+}
+
+.actions-new-edit button{
+    margin: 10px;
+}
