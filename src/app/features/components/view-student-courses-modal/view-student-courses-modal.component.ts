@@ -40,7 +40,9 @@ export class ViewStudentCoursesModalComponent implements OnInit {
         if (element.idPerson == this.data.elementRow) {
           this._dataService.getDataCoursesByCourseId(element.idCourse)
           .subscribe((resp: Course) => {
-            this.currentStudentCourses!.push(resp);
+            if (resp) {
+              this.currentStudentCourses!.push(resp);
+            }
           },error => {
 
           });

@@ -5,7 +5,7 @@ export const LOGIN_ACTIONS = {
     login: {
         run: createAction('[Login] iniciar sesión', props<{user: string, password: string}>()),
         success:  createAction('[Login] iniciar sesión success', props<{person: Person, token: string}>()),
-        failed: createAction('[Logout] iniciar sesión failed')
+        failed: createAction('[Login] iniciar sesión failed')
     }
 }
 

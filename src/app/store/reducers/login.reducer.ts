@@ -41,4 +41,10 @@ export const LogoutReducer = createReducer(
             loading: false
         }
     }),
+    on(LOGOUT_ACTIONS.logout.failed, (state) => {
+        return {
+            ...state,
+            loading: false,
+        }
+    })
 )

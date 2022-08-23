@@ -61,9 +61,8 @@ import { environment } from '../environments/environment';
     FormsModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([LoginEffectsService/* , PersonsEffectsService */]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    StoreModule.forRoot({}, {})
+    EffectsModule.forRoot([LoginEffectsService]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,7 @@ export const initialLoginState: ILoginState = {
 }
 
 export interface ILogoutState {
+    loading: boolean 
 }
 
 export const initialLogoutState: ILogoutState = {
